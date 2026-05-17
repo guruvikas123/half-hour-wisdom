@@ -184,14 +184,6 @@ section { padding: 96px 0; }
   opacity: 0.20;
   pointer-events: none;
 }
-.hero-logo {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  margin-bottom: 28px;
-  display: block;
-}
-
 .hero-tag {
   display: inline-flex;
   align-items: center;
