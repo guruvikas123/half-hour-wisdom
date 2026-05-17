@@ -753,6 +753,9 @@ blockquote.about-quote {
   color: var(--cream-dim);
 }
 .platform-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   padding: 7px 18px;
   border: 1px solid var(--border-dim);
   color: var(--cream-dim);
@@ -764,6 +767,7 @@ blockquote.about-quote {
   transition: border-color 0.2s, color 0.2s;
 }
 .platform-pill:hover { border-color: var(--gold); color: var(--gold); }
+.platform-icon { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* ── FOOTER ─────────────────────────────────────────────────── */
 footer {
