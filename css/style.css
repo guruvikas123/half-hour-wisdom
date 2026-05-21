@@ -836,6 +836,102 @@ footer {
   letter-spacing: 0.08em;
 }
 
+/* ── REVIEWS ────────────────────────────────────────────────── */
+.reviews-section { background: var(--bg2); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.review-card {
+  background: var(--bg);
+  border: 1px solid var(--border-dim);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.review-card:hover { border-color: var(--border); transform: translateY(-3px); }
+
+.review-stars { color: var(--gold); font-size: 16px; letter-spacing: 2px; line-height: 1; }
+.review-stars .star-empty { color: var(--gold-dim); opacity: 0.4; }
+
+.review-text {
+  font-size: 14px;
+  color: var(--cream-dim);
+  font-weight: 300;
+  line-height: 1.75;
+  flex-grow: 1;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-dim);
+  margin-top: auto;
+}
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--bg3);
+}
+.review-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.3;
+}
+.review-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--cream-dim);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* Skeleton loading state */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+.review-skeleton {
+  min-height: 200px;
+  background: linear-gradient(90deg, var(--bg3) 25%, var(--bg2) 50%, var(--bg3) 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-color: transparent !important;
+  pointer-events: none;
+}
+
+.reviews-error {
+  font-size: 14px;
+  color: var(--cream-dim);
+  text-align: center;
+  padding: 20px;
+}
+.reviews-error a { color: var(--gold); text-decoration: none; }
+.reviews-error a:hover { text-decoration: underline; }
+
+.reviews-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
 /* ── SCROLL ANIMATIONS ──────────────────────────────────────── */
 .animate-on-scroll {
   opacity: 0;

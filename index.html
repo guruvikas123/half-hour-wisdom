@@ -335,6 +335,41 @@
 
 
 <!-- ══════════════════════════════════════════════════════════
+     REVIEWS
+     ══════════════════════════════════════════════════════════ -->
+<section id="reviews" class="reviews-section">
+  <div class="container-fluid px-4 px-lg-5">
+
+    <div class="section-tag">What listeners say</div>
+    <h2 class="section-title">Heard from <em>our community</em></h2>
+
+    <!-- Skeleton shown while API loads -->
+    <div id="reviews-skeleton" class="reviews-grid" aria-hidden="true">
+      <div class="review-card review-skeleton"></div>
+      <div class="review-card review-skeleton"></div>
+      <div class="review-card review-skeleton"></div>
+    </div>
+
+    <!-- Populated by initGMBReviews() -->
+    <div id="gmb-reviews" class="reviews-grid animate-on-scroll" style="display:none"></div>
+
+    <p id="reviews-error" class="reviews-error" style="display:none">
+      Unable to load reviews right now. &mdash;
+      <a href="https://search.google.com/local/reviews?placeid=YOUR_GOOGLE_PLACE_ID" target="_blank" rel="noopener noreferrer">See them on Google &rarr;</a>
+    </p>
+
+    <div class="reviews-cta">
+      <a href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID"
+         target="_blank" rel="noopener noreferrer" class="btn-secondary">
+        Leave a Google review &rarr;
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
      QUOTE STRIP
      ══════════════════════════════════════════════════════════ -->
 <div class="quote-strip">
@@ -492,8 +527,17 @@
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmwBmJ5JMrkAAg7pbGmQgAnCgmTN"
   crossorigin="anonymous"></script>
-<!-- Custom JS -->
+<!-- Custom JS (must load before Maps so initGMBReviews is defined) -->
 <script src="js/main.js"></script>
+<!--
+  ── GOOGLE MAPS / PLACES API ─────────────────────────────────
+  Replace YOUR_GOOGLE_MAPS_API_KEY with your key from
+  https://console.cloud.google.com → APIs & Services → Credentials
+  Enable: "Places API" and "Maps JavaScript API"
+  Restrict the key to your domain under "HTTP referrers"
+-->
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initGMBReviews"></script>
 
 </body>
 </html>

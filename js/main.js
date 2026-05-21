@@ -41,6 +41,84 @@ document.querySelectorAll('#navbarMenu .nav-link').forEach(link => {
   });
 });
 
+/* ── GMB REVIEWS (Google Places API) ───────────────────────── */
+/*
+ * Replace YOUR_GOOGLE_PLACE_ID with the Place ID for your GMB listing.
+ * Find it at: https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
+ * Example: "ChIJN1t_tDeuEmsRUsoyG83frY4"
+ */
+const GMB_PLACE_ID = 'YOUR_GOOGLE_PLACE_ID';
+
+window.initGMBReviews = function () {
+  const service = new google.maps.places.PlacesService(document.createElement('div'));
+  service.getDetails(
+    { placeId: GMB_PLACE_ID, fields: ['reviews', 'rating', 'user_ratings_total'] },
+    (place, status) => {
+      document.getElementById('reviews-skeleton').style.display = 'none';
+      if (status !== google.maps.places.PlacesServiceStatus.OK || !place.reviews?.length) {
+        document.getElementById('reviews-error').style.display = 'block';
+        return;
+      }
+      renderGMBReviews(place.reviews);
+    }
+  );
+};
+
+function renderGMBReviews(reviews) {
+  const grid = document.getElementById('gmb-reviews');
+  grid.style.display = '';
+
+  reviews.forEach(r => {
+    const card = document.createElement('article');
+    card.className = 'review-card';
+
+    const stars = document.createElement('div');
+    stars.className = 'review-stars';
+    stars.setAttribute('aria-label', `${r.rating} out of 5 stars`);
+    for (let i = 1; i <= 5; i++) {
+      const s = document.createElement('span');
+      s.textContent = '★';
+      if (i > r.rating) s.className = 'star-empty';
+      stars.appendChild(s);
+    }
+
+    const text = document.createElement('p');
+    text.className = 'review-text';
+    text.textContent = r.text;
+
+    const author = document.createElement('div');
+    author.className = 'review-author';
+
+    const avatar = document.createElement('img');
+    avatar.className = 'review-avatar';
+    avatar.src = r.profile_photo_url || '';
+    avatar.alt = r.author_name;
+    avatar.loading = 'lazy';
+    avatar.onerror = function () { this.style.display = 'none'; };
+
+    const info = document.createElement('div');
+    const name = document.createElement('div');
+    name.className = 'review-name';
+    name.textContent = r.author_name;
+    const time = document.createElement('div');
+    time.className = 'review-time';
+    time.textContent = r.relative_time_description;
+
+    info.appendChild(name);
+    info.appendChild(time);
+    author.appendChild(avatar);
+    author.appendChild(info);
+
+    card.appendChild(stars);
+    card.appendChild(text);
+    card.appendChild(author);
+    grid.appendChild(card);
+  });
+
+  /* trigger scroll animation */
+  setTimeout(() => grid.classList.add('visible'), 50);
+}
+
 /* ── SUBSCRIBE FORM ─────────────────────────────────────────── */
 const subscribeForm = document.getElementById('subscribeForm');
 const subscribeBtn  = document.getElementById('subscribeBtn');
