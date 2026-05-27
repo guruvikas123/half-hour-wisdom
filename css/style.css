@@ -4,16 +4,16 @@
 
 /* ── DESIGN TOKENS ──────────────────────────────────────────── */
 :root {
-  --bg:         #F2F7F4;
-  --bg2:        #E8F0EB;
-  --bg3:        #DAE8DE;
-  --cream:      #141A15;
-  --cream-dim:  #4A5E50;
-  --gold:       #2D5C42;
-  --gold-light: #3D7A58;
-  --gold-dim:   #6FA080;
-  --border:     rgba(45,92,66,0.25);
-  --border-dim: rgba(45,92,66,0.15);
+  --bg:         #2A2520;
+  --bg2:        #332D27;
+  --bg3:        #3E362E;
+  --cream:      #EDE0C8;
+  --cream-dim:  #9A8E76;
+  --gold:       #C8962C;
+  --gold-light: #E0B84A;
+  --gold-dim:   #8A6418;
+  --border:     rgba(200,150,44,0.22);
+  --border-dim: rgba(200,150,44,0.11);
 }
 
 /* ── BASE ──────────────────────────────────────────────────── */
@@ -25,7 +25,7 @@ html {
 body {
   background: var(--bg);
   color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
@@ -41,14 +41,14 @@ body {
 .navbar {
   padding: 18px 0;
   border-bottom: 1px solid var(--border-dim);
-  background: rgba(242,247,244,0.92) !important;
+  background: rgba(42,37,32,0.92) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition: background 0.3s;
-  box-shadow: 0 1px 16px rgba(20,26,21,0.07);
+  box-shadow: 0 1px 16px rgba(0,0,0,0.18);
 }
 .navbar.scrolled {
-  background: rgba(242,247,244,0.98) !important;
+  background: rgba(42,37,32,0.98) !important;
 }
 
 .nav-brand {
@@ -103,7 +103,7 @@ body {
 
 @media (max-width: 991.98px) {
   .navbar-collapse {
-    background: rgba(232,240,235,0.98);
+    background: rgba(51,45,39,0.98);
     padding: 16px 20px 24px;
     border-top: 1px solid var(--border-dim);
     margin-top: 12px;
@@ -170,7 +170,7 @@ section { padding: 96px 0; }
   font-weight: 700;
   line-height: 0.85;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(45,92,66,0.12);
+  -webkit-text-stroke: 1px rgba(200,150,44,0.10);
   letter-spacing: -0.03em;
   user-select: none;
   pointer-events: none;
@@ -255,7 +255,7 @@ section { padding: 96px 0; }
   padding: 14px 30px;
   background: var(--gold);
   color: var(--bg);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.07em;
@@ -276,7 +276,7 @@ section { padding: 96px 0; }
   padding: 13px 28px;
   border: 1px solid var(--border);
   color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -336,7 +336,7 @@ section { padding: 96px 0; }
   content: '';
   position: absolute;
   inset: 11px;
-  border: 1px solid rgba(45,92,66,0.12);
+  border: 1px solid rgba(200,150,44,0.08);
   border-radius: 50%;
 }
 .clock-number {
@@ -539,7 +539,7 @@ blockquote.about-quote {
 /* Featured episode */
 .ep-featured { padding: 0; border: 1px solid var(--border); }
 .ep-featured-img {
-  background: linear-gradient(135deg, var(--bg3) 0%, #C8DDD0 100%);
+  background: linear-gradient(135deg, var(--bg3) 0%, #251E18 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -606,7 +606,7 @@ blockquote.about-quote {
   left: 18px;
   right: 18px;
   padding: 13px 16px;
-  background: rgba(242,247,244,0.92);
+  background: rgba(42,37,32,0.92);
   border-top: 2px solid var(--gold);
 }
 .host-photo-tag p {
@@ -682,7 +682,7 @@ blockquote.about-quote {
   content: '';
   position: absolute;
   inset: 60px;
-  border: 1px solid rgba(45,92,66,0.10);
+  border: 1px solid rgba(200,150,44,0.06);
   border-radius: 50%;
 }
 .subscribe-inner { position: relative; max-width: 540px; margin: 0 auto; }
@@ -704,7 +704,7 @@ blockquote.about-quote {
   border: 1px solid var(--border);
   border-right: none;
   color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 13.5px;
   outline: none;
   border-radius: 0;
@@ -718,7 +718,7 @@ blockquote.about-quote {
   padding: 13px 26px;
   background: var(--gold);
   color: var(--bg);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
