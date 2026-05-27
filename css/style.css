@@ -388,6 +388,7 @@ section { padding: 96px 0; }
 }
 .ep-tag-pill {
   display: inline-block;
+  align-self: flex-start;
   padding: 3px 12px;
   border: 1px solid var(--border);
   color: var(--rust);
