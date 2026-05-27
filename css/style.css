@@ -55,7 +55,7 @@ body {
 }
 .nav-brand {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--ink) !important;
   letter-spacing: 0.01em;
