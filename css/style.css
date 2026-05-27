@@ -4,9 +4,9 @@
 
 /* ── DESIGN TOKENS ──────────────────────────────────────────── */
 :root {
-  --bg:         #2A2520;
-  --bg2:        #332D27;
-  --bg3:        #3E362E;
+  --bg:         #3D3730;
+  --bg2:        #47403A;
+  --bg3:        #524840;
   --cream:      #EDE0C8;
   --cream-dim:  #9A8E76;
   --gold:       #C8962C;
@@ -41,14 +41,14 @@ body {
 .navbar {
   padding: 18px 0;
   border-bottom: 1px solid var(--border-dim);
-  background: rgba(42,37,32,0.92) !important;
+  background: rgba(61,55,48,0.92) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition: background 0.3s;
   box-shadow: 0 1px 16px rgba(0,0,0,0.18);
 }
 .navbar.scrolled {
-  background: rgba(42,37,32,0.98) !important;
+  background: rgba(61,55,48,0.98) !important;
 }
 
 .nav-brand {
@@ -103,7 +103,7 @@ body {
 
 @media (max-width: 991.98px) {
   .navbar-collapse {
-    background: rgba(51,45,39,0.98);
+    background: rgba(71,64,58,0.98);
     padding: 16px 20px 24px;
     border-top: 1px solid var(--border-dim);
     margin-top: 12px;
@@ -539,7 +539,7 @@ blockquote.about-quote {
 /* Featured episode */
 .ep-featured { padding: 0; border: 1px solid var(--border); }
 .ep-featured-img {
-  background: linear-gradient(135deg, var(--bg3) 0%, #251E18 100%);
+  background: linear-gradient(135deg, var(--bg3) 0%, #38302A 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -606,7 +606,7 @@ blockquote.about-quote {
   left: 18px;
   right: 18px;
   padding: 13px 16px;
-  background: rgba(42,37,32,0.92);
+  background: rgba(61,55,48,0.92);
   border-top: 2px solid var(--gold);
 }
 .host-photo-tag p {
