@@ -41,6 +41,31 @@ document.querySelectorAll('#navbarMenu .nav-link').forEach(link => {
   });
 });
 
+/* ── LIVE ANALOG CLOCK ──────────────────────────────────────── */
+const clockHr  = document.getElementById('clockHr');
+const clockMin = document.getElementById('clockMin');
+const clockSec = document.getElementById('clockSec');
+
+function tickClock() {
+  const now  = new Date();
+  const hrs  = now.getHours() % 12;
+  const mins = now.getMinutes();
+  const secs = now.getSeconds();
+
+  const hrDeg  = hrs  * 30  + mins * 0.5;          /* 360/12 = 30 per hour   */
+  const minDeg = mins * 6   + secs * 0.1;           /* 360/60 = 6 per minute  */
+  const secDeg = secs * 6;                           /* 360/60 = 6 per second  */
+
+  if (clockHr)  clockHr.style.transform  = `translateX(-50%) rotate(${hrDeg}deg)`;
+  if (clockMin) clockMin.style.transform = `translateX(-50%) rotate(${minDeg}deg)`;
+  if (clockSec) clockSec.style.transform = `translateX(-50%) rotate(${secDeg}deg)`;
+}
+
+if (clockHr) {
+  tickClock();                   /* set immediately — no blank flash */
+  setInterval(tickClock, 1000);  /* update every second              */
+}
+
 /* ── SUBSCRIBE FORM ─────────────────────────────────────────── */
 const subscribeForm = document.getElementById('subscribeForm');
 const subscribeBtn  = document.getElementById('subscribeBtn');

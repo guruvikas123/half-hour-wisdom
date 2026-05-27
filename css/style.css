@@ -564,7 +564,8 @@ section { padding: 96px 0; }
   background: var(--rust);
   border-radius: 2px;
   transform-origin: bottom center;
-  transform: translateX(-50%) rotate(-60deg);
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.5s cubic-bezier(0.4, 2.08, 0.55, 0.44);
 }
 .clock-hand-min {
   position: absolute;
@@ -575,7 +576,21 @@ section { padding: 96px 0; }
   background: var(--ink-mid);
   border-radius: 2px;
   transform-origin: bottom center;
-  animation: tickMin 60s linear infinite;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.5s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+.clock-hand-sec {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 1px;
+  height: 88px;
+  background: var(--rust-lt);
+  border-radius: 1px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.25s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+  opacity: 0.7;
 }
 
 /* ── HOST ───────────────────────────────────────────────────── */
