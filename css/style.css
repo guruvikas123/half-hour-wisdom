@@ -462,13 +462,13 @@ section { padding: 96px 0; }
 }
 .ep-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 58px;
+  font-size: 42px;
   font-weight: 700;
   color: var(--rust);
   opacity: 0.13;
   line-height: 1;
   letter-spacing: -0.02em;
-  margin-bottom: -4px;
+  margin-bottom: 12px;
 }
 .ep-card-body {
   display: flex;
