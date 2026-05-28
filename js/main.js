@@ -32,12 +32,30 @@ window.addEventListener('scroll', () => {
   mainNav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-/* ── MOBILE NAV: CLOSE ON LINK CLICK ───────────────────────── */
+/* ── MOBILE NAV: TOGGLE + CLOSE ON LINK CLICK ──────────────── */
+const navToggler  = document.querySelector('.navbar-toggler');
+const navCollapseEl = document.getElementById('navbarMenu');
+
+if (navToggler && navCollapseEl) {
+  navToggler.addEventListener('click', () => {
+    if (typeof bootstrap !== 'undefined') {
+      const bsCol = bootstrap.Collapse.getOrCreateInstance(navCollapseEl);
+      bsCol.toggle();
+    } else {
+      navCollapseEl.classList.toggle('show');
+    }
+    navToggler.setAttribute('aria-expanded', navCollapseEl.classList.contains('show'));
+  });
+}
+
 document.querySelectorAll('#navbarMenu .nav-link').forEach(link => {
   link.addEventListener('click', () => {
-    const collapseEl = document.getElementById('navbarMenu');
-    const bsCollapse = bootstrap.Collapse.getInstance(collapseEl);
-    if (bsCollapse) bsCollapse.hide();
+    if (typeof bootstrap !== 'undefined') {
+      const bsCol = bootstrap.Collapse.getInstance(navCollapseEl);
+      if (bsCol) bsCol.hide();
+    } else if (navCollapseEl) {
+      navCollapseEl.classList.remove('show');
+    }
   });
 });
 
